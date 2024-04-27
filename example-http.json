@@ -1,0 +1,8 @@
+{
+	"follow": ["tail", "-F", "/var/log/nginx/access.log" ],
+	"trigger": "ipset add dynban {subject}",
+	"watches": {
+		"http-attacker-binary": { "search": "x...x...x...x", "subject": "^([0-9.]+)" },
+		"http-attacker-cgibin": { "search": "GET /cgi-bin", "subject": "^([0-9.]+)" }
+	}
+}
