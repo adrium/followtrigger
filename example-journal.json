@@ -2,6 +2,6 @@
 	"follow": ["journalctl", "-f" ],
 	"trigger": "ipset add dynban {subject}",
 	"watches": {
-		"smtp-scanner-command": { "search": "non-SMTP command", "subject": "from.*\\[([0-9.]+)\\]:" }
+		"smtp-scanner-command": { "search": "^.{10,30}postfix.*non-SMTP command", "subject": "from.*\\[([0-9.]+)\\]:" }
 	}
 }
